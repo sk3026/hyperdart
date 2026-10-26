@@ -57,5 +57,5 @@ export default {
 
   github: 'https://github.com/sk3026/hyperdart',
 
-  demovideo: ''
+  demovideo: 'https://youtu.be/ah99bPI3MOA'
 };
