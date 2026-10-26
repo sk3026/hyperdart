@@ -1,8 +1,8 @@
 {
-  "name": "hello_world",
+  "name": "tourism_explorer",
   "version": "1.0.0",
   "source": "src/frontend/index.jsx",
-  "main": "dist/index.umd.js",
+  "main": "dist/frontend/index.modern.js",
   "module": "dist/frontend/index.modern.js",
   "private": false,
   "type": "module",

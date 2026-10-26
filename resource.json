@@ -1,15 +1,15 @@
 {
-  "title": "Generic Resource",
-  "description": "Provides structured information about any type of resource (e.g., products, vehicles, electronics, real estate, jobs). Fully generic and editable for custom domains.",
+  "title": "Tourism Explorer",
+  "description": "Find tourist attractions near a destination and filter them by type.",
   "componentScope": {
     "supportedIntents": [
       {
-        "intent": "product-search",
-        "description": "Queries requesting specific products, categories, or inventory availability. Handles explicit items as well as feature-based searches (e.g., price ranges, specific years, subtypes).",
+        "intent": "tourism-attractions",
+        "description": "Queries requesting attractions, landmarks, museums, parks, or other places to visit near a destination.",
         "example": [
-          "Show me gaming laptops under $1500.",
-          "Find SUVs from 2023 with a sunroof.",
-          "List studio apartments in downtown."
+          "Find tourist attractions in Paris.",
+          "Show me museums near Rome.",
+          "What parks can I visit in San Francisco?"
         ]
       }
     ]
@@ -18,19 +18,19 @@
     "$defs": {
       "categories": {
         "type": "string",
-        "description": "High-level groups or classifications for the resource, e.g., 'Laptop', 'Car', 'Apartment'."
+        "description": "Types of tourist attractions, such as museums, monuments, temples, forts, parks, and viewpoints."
       },
       "subtypes": {
         "type": "string",
-        "description": "Sub-categories or specific types within a category, e.g., 'Gaming Laptop', 'SUV', 'Studio Apartment'."
+        "description": "Specific attraction subtypes, such as historic sites, gardens, galleries, or castles."
       },
       "attributes": {
         "type": "string",
-        "description": "Attributes or properties of the resource that a user might query, e.g., 'price', 'color', 'size', 'year'."
+        "description": "Attraction details such as name, address, category, coordinates, website, or distance."
       },
       "minMaxRange": {
         "type": "object",
-        "description": "Numeric range filter for attributes, e.g., price, year, rating.",
+        "description": "Distance range in kilometers from the requested destination.",
         "properties": {
           "min": {
             "type": "number",
@@ -44,27 +44,31 @@
       }
     },
     "type": "object",
-    "description": "Main query object defining the resource request.",
+    "description": "Tourism query describing the destination and the attractions to find.",
     "properties": {
       "type": {
         "type": "string",
-        "description": "Kind of request: 'list' to retrieve multiple resources or 'query' for filtered data."
+        "description": "Request type: 'list' for nearby attractions or 'query' for a filtered search."
       },
       "filters": {
         "type": "object",
-        "description": "Filters to narrow down resources by category, subtype, name, year, or numeric ranges.",
+        "description": "Filters to narrow down attractions by destination, category, subtype, or search radius.",
         "properties": {
           "category": { "$ref": "#/$defs/categories" },
           "subtype": { "$ref": "#/$defs/subtypes" },
           "name": {
             "type": "string",
-            "description": "Specific resource name or identifier."
+            "description": "Name of a specific attraction, if requested."
           },
-          "year": {
+          "destination": {
+            "type": "string",
+            "description": "City or destination where attractions should be found."
+          },
+          "radiusKm": {
             "type": "number",
-            "description": "Numeric attribute such as year, release year, or custom field."
+            "description": "Search radius in kilometers around the destination."
           },
-          "rangeFilters": { "$ref": "#/$defs/minMaxRange" }
+          "distanceRangeKm": { "$ref": "#/$defs/minMaxRange" }
         },
         "additionalProperties": true
       },
@@ -72,10 +76,10 @@
         "type": "array",
         "items": { "$ref": "#/$defs/attributes" }
       },
-      "entities":{
-        "collections":["collection_name_1"]
+      "entities": {
+        "collections": ["locations"]
       }
     },
-    "required": ["type", "filters", "features","entities"]
+    "required": ["type", "filters", "features", "entities"]
   }
 }

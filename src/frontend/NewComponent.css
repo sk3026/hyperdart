@@ -1,0 +1,29 @@
+
+/* Attraction card text — readable on white cards */
+.tourism-explorer .attraction-card {
+  background: #ffffff !important;
+  color: #182238 !important;
+}
+
+.tourism-explorer .attraction-card .MuiTypography-root {
+  color: #182238 !important;
+}
+
+.tourism-explorer .attraction-card .MuiTypography-body2 {
+  color: #526078 !important;
+}
+
+/* Category chip */
+.tourism-explorer .attraction-card .MuiChip-root {
+  background: #292d3b !important;
+  border-color: #292d3b !important;
+}
+
+.tourism-explorer .attraction-card .MuiChip-label {
+  color: #ffffff !important;
+}
+
+/* Map and website links */
+.tourism-explorer .attraction-card .MuiButton-root {
+  color: #f45b40 !important;
+}

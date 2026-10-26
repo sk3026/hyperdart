@@ -1,5 +1,25 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
+
+/* Force readable white text in Tourism Explorer */
+.tourism-explorer .MuiChip-label,
+.tourism-explorer .MuiTypography-root,
+.tourism-explorer .MuiButton-root {
+  color: #ffffff !important;
+}
+
+/* Keep secondary text slightly softer */
+.tourism-explorer .MuiTypography-body2,
+.tourism-explorer .tourism-footer {
+  color: #d1d5db !important;
+}
+
+/* Keep the selected filter readable */
+.tourism-explorer .MuiChip-colorPrimary .MuiChip-label {
+  color: #ffffff !important;
+}
+
+/* Keep attraction cards dark */
+.tourism-explorer .attraction-card,
+.tourism-explorer .destination-panel {
+  background-color: #202331;
+  color: #ffffff;
 }

@@ -1,36 +1,173 @@
+
 [
   {
-    "component": "hello_world",
-    "componentPrimaryName": "",
-    "templateID": 804401,
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
     "entities": [
       {
-        "word": "20+30",
-        "wgID": 104401,
-        "wgName": "EXPRESSION",
-        "templateID": 804401,
-        "entityInfo": null,
-        "componentName": "hello_world",
-        "entityType": "EXPRESSION",
-        "sourceID": "word",
-        "description": "expression",
-        "priority": 5,
-        "isEnabled": 1,
-        "keywordRequired": 0,
-        "primaryText": "NA",
-        "relevanceScore": 90,
-        "sourceValue": 0,
-        "index": 0,
-        "primaryID": "word"
+        "word": "Paris",
+        "entityInfo": {
+          "name": "Paris",
+          "geo": {
+            "lat": 48.8566,
+            "long": 2.3522
+          }
+        }
       }
     ],
-    "query": "20+30",
-    "componentEnabled": true,
-    "keyword": [],
-    "disambiguationType": 1,
-    "time": "2026-10-25T18:19:35.955Z",
-    "quickView": 3,
-    "queryRegex": "(calculator )?(EXPRESSION)",
-    "componentType": "internal"
+    "query": "tourist attractions in Paris"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Delhi",
+        "entityInfo": {
+          "name": "Delhi",
+          "geo": {
+            "lat": 28.6139,
+            "long": 77.209
+          }
+        }
+      }
+    ],
+    "query": "museums in Delhi"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Rome",
+        "entityInfo": {
+          "name": "Rome",
+          "geo": {
+            "lat": 41.9028,
+            "long": 12.4964
+          }
+        }
+      }
+    ],
+    "query": "landmarks in Rome"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Kurukshetra",
+        "entityInfo": {
+          "name": "Kurukshetra",
+          "geo": {
+            "lat": 29.9695,
+            "long": 76.8783
+          }
+        }
+      }
+    ],
+    "query": "best places to visit in Kurukshetra"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Tokyo",
+        "entityInfo": {
+          "name": "Tokyo",
+          "geo": {
+            "lat": 35.6762,
+            "long": 139.6503
+          }
+        }
+      }
+    ],
+    "query": "sights in Tokyo"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Paris",
+        "entityInfo": {
+          "name": "Paris",
+          "geo": {
+            "lat": 48.8566,
+            "long": 2.3522
+          }
+        }
+      }
+    ],
+    "query": "temples in Paris"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Paris",
+        "entityInfo": {
+          "name": "Paris",
+          "geo": {
+            "lat": 48.8566,
+            "long": 2.3522
+          }
+        }
+      }
+    ],
+    "query": "forts in Paris"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Paris",
+        "entityInfo": {
+          "name": "Paris",
+          "geo": {
+            "lat": 48.8566,
+            "long": 2.3522
+          }
+        }
+      }
+    ],
+    "query": "parks in Paris"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Paris",
+        "entityInfo": {
+          "name": "Paris",
+          "geo": {
+            "lat": 48.8566,
+            "long": 2.3522
+          }
+        }
+      }
+    ],
+    "query": "monuments in Paris"
+  },
+  {
+    "component": "tourism_explorer",
+    "componentPrimaryName": "Tourism Explorer",
+    "entities": [
+      {
+        "word": "Tokyo",
+        "entityInfo": {
+          "name": "Tokyo",
+          "geo": {
+            "lat": 35.6762,
+            "long": 139.6503
+          }
+        }
+      }
+    ],
+    "query": "viewpoints in Tokyo"
   }
 ]

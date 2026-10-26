@@ -6,14 +6,6 @@ import path from 'path';
 const require = createRequire(import.meta.url);
 const pkg = require('../package.json');
 
-// Check that the built module file exists
-if (!existsSync(pkg.module)) {
-  console.error(
-    `\x1b[31mError: Module file '${pkg.module}' is missing. Please build the project first.\x1b[0m`
-  );
-  process.exit(1);
-}
-
 // Load hyperdart.config.js
 const configPath = path.resolve('hyperdart.config.js');
 const config = (await import(pathToFileURL(configPath).href)).default;
@@ -29,7 +21,7 @@ function isEmpty(value) {
 
 const errors = [];
 
-// Validates that a config field is a non-empty string pointing to an existing path
+// Validates that a path field is a non-empty string pointing to an existing file.
 function validatePath(value, fieldName) {
   if (typeof value !== 'string' || value.trim() === '') {
     errors.push(`  * ${fieldName} is missing or empty.`);
@@ -81,9 +73,17 @@ function validateUrl(value, fieldName, isValid, expected) {
   }
 }
 
-//Validate github and demovideo
+//Validate package entry points and metadata
+validatePath(pkg.main, 'package.json "main"');
+validatePath(pkg.module, 'package.json "module"');
 validateUrl(config?.github, 'github', isValidGithubUrl, 'GitHub URL (https://github.com/<owner>/<repo>)');
-validateUrl(config?.demovideo, 'demovideo', isValidYoutubeUrl, 'YouTube video link');
+if (
+  config?.demovideo !== undefined &&
+  config.demovideo !== null &&
+  config.demovideo !== ''
+) {
+  validateUrl(config.demovideo, 'demovideo', isValidYoutubeUrl, 'YouTube video link');
+}
 
 //Validate triggers.keywords
 const keywords = config?.triggers?.keywords;
@@ -121,7 +121,7 @@ if (typeof clientLocation !== 'string' || clientLocation.trim() === '') {
 
 if (errors.length > 0) {
   console.error('\x1b[31m');
-  console.error('Publish blocked - hyperdart.config.js has invalid fields:');
+  console.error('Publish blocked - package metadata or hyperdart.config.js is invalid:');
   errors.forEach((e) => console.error(e));
   console.error(
     '\nPlease fill in real values before publishing.\x1b[0m'
