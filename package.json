@@ -1,5 +1,5 @@
 {
-  "name": "tourism_explorer",
+  "name": "@suraj2002/tourismexplorer",
   "version": "1.0.0",
   "source": "src/frontend/index.jsx",
   "main": "dist/frontend/index.modern.js",
